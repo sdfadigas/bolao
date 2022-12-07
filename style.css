@@ -10,18 +10,25 @@ html {
 }
 
 body {
-    background-color: #343434 !important;
+  /*  background-color: #343434 !important; */
     margin: 0 auto;
     text-align: center;
     font-family: 'Inter';
     font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(53, 59, 65);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
 }
 
 
 /* NAV */
 
 #navbar {
-    background-color: #343434;
+    background-color: transparent;
     position: sticky;
     width: 100%;
     top: 0;
@@ -115,9 +122,11 @@ footer {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#initialBtn {
+#initialBtn,
+#submitBtn {
     height: 35px;
-    width: 346px;
+    width: fit-content;
+    padding:5px;
     color: #222222;
     font-style: normal;
     font-weight: 700;
@@ -133,12 +142,11 @@ footer {
 
 /* LOGIN PAGE */
 #imgBGLogin {
-    position: absolute;
-    z-index: -1;
-    width: 700px;
-    height: 1104.44px;
+    position: fixed;
+    z-index: 0;
+    width: 30%;
     opacity: 20%;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -152,7 +160,8 @@ h1 {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-form {
+form,
+.welcome {
     position: absolute;
     padding-bottom: 50px;
     margin-top: 100px;
@@ -161,7 +170,7 @@ form {
     transform: translate(-50%, -50%);
 }
 
-input[type=text],
+input[type=email],
 input[type=password],
 input[type=number] {
     width: 100%;
@@ -174,13 +183,18 @@ input[type=number] {
 
 .containerForm,
 .containerPalpites,
-.containerRanking {
+.containerRanking,
+.containerWelcome {
+    display: block;
+    height:420px;
     padding: 16px;
     text-align: left;
     font-style: normal;
     font-size: 12px;
     line-height: 15px;
     color: #eeeeee;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 span.psw {
@@ -212,23 +226,14 @@ span.psw {
 }
 
 .socialBnt {
-    width: 48%;
+    width: 32%;
     height: 35px;
     margin: 8px 3px 0px 3px;
     background: #EEEEEE;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     border-style: none;
-    float: right;
     cursor: pointer;
-}
-
-#socialBtnGoogle {
-    float: left;
-}
-
-#socialBtnFB {
-    float: right;
 }
 
 .fa-google {
@@ -246,9 +251,10 @@ span.psw {
 }
 
 /*PALPITES PAGE*/
-.containerPalpites {
+.containerPalpites,
+.containerWelcome {
     text-align: center;
-    background: #343434;
+    background: #343a40;
     border-radius: 8px;
 }
 
@@ -262,7 +268,7 @@ table,
 th,
 td {
     border-spacing: 0;
-    border: 1px solid #555555;
+    border: 1px solid #343a40;
     padding: 4px;
 }
 
@@ -273,7 +279,7 @@ td {
 }
 
 .containerRegulamento {
-    background: #343434;
+    background: #343a40;
     width: 100%;
     border-radius: 8px;
     padding: 0;
@@ -283,14 +289,14 @@ td {
 }
 
 .simulador {
-    background-color: #555555;
+    background-color: #343a40;
 }
 
 /*RESULTADOS PAGES*/
 .containerResultados {
     width: max-content;
     text-align: center;
-    background: #343434;
+    background: #343a40;
     border-radius: 8px;
-    color:#eeeeee;
+    color: #eeeeee;
 }
